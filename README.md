@@ -26,7 +26,7 @@ Write a function called `printPositives` that takes an array and uses the `forEa
 Similar to the previous exercise, write a function called `getPositives` that takes an array and uses the `filter` method to **return a new array** with only the positive numbers.
 
 ## Exercise 2B
-Re-do exercise 1 by first filtering the input array, and then printing the numbers from the filtered array. Your code will look something like: `return arr.filter(...).forEach(...)
+Re-do exercise 1 by first filtering the input array, and then printing the numbers from the filtered array. Your code will look something like: `return arr.filter(...).forEach(...)`.
 
 ## Exercise 3
 Write a function called `filterArray` that takes an array AND a function as arguments. Your `filter` function should return a new array that contains only the elements where the passed function returns a truthy value.
