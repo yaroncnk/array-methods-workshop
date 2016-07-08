@@ -29,11 +29,9 @@ Similar to the previous exercise, write a function called `getPositives` that ta
 Re-do exercise 1 by first filtering the input array, and then printing the numbers from the filtered array. Your code will look something like: `return arr.filter(...).forEach(...)`.
 
 ## Exercise 3
-Write a function called `filterArray` that takes an array AND a function as arguments. Your `filter` function should return a new array that contains only the elements where the passed function returns a truthy value.
+Write a function called `filterArray` that takes a callback function and an array as arguments. Your `filterArray` function should return a new array that contains only the elements where the callback function returns true.
 
-**NOTE**: You are allowed to use `Array.prototype.filter` to answer this question.
-
-**NOTE 2**: This is a bit of a trick question, the answer is a one-liner :)
+**NOTE**: This is a **trick question**. The answer is a one-liner and you are allowed to use `array.filter` :)
 
 ## Exercise 4
 Write a function called `longestWord` that takes a string as argument, and returns the longest word in the string. You should use `Array.prototype.reduce` to do your work.
@@ -42,6 +40,8 @@ Write a function called `longestWord` that takes a string as argument, and retur
 
 ## Exercise 5
 Write a function called `countVowels` that takes a string and returns the number of vowels in the string. You should use `Array.prototype.reduce` to do your work.
+
+For the string `"The quick brown fox"`, the output should be `5` because there is one `e`, one `u`, one `i` and two `o`s.
 
 **Hint**: You can use `String.prototype.split` again. There is a way to use it to split a string by character. Try to Google it :)
 
