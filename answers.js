@@ -79,3 +79,29 @@ function longestWord(sentence) {
      }, 0);
      return howManyVowels;
  }
+ 
+ //ex. 6 finding the highest and the lowest numbers
+ 
+ var nums = [1,2,6,77,-20,20,30];
+ function highLow(nums) {
+     var maxMin = {
+         highest : -Infinity,
+         lowest: Infinity
+     };
+     var findMax = nums.reduce(function(obj, num){
+       if (obj.highest < num){
+             maxMin.highest = num;
+             return {highest: num, lowest: Infinity};
+         }
+         else if (obj.lowest > num)  {
+             maxMin.lowest = num;
+             return {lowest: num};
+         }
+       else {
+         return maxMin;
+       }
+     
+     }, maxMin); 
+     return maxMin;
+ }
+ 
