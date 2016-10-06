@@ -63,3 +63,19 @@ function longestWord(sentence) {
     }, '');
     return hereItIs;
 }
+
+//ex. 5 counting vowels in a string
+
+ function howManyVowels(sentence) {
+     var newArray = sentence.split("");
+     var arrVowels = ['a', 'e', 'i', 'o', 'u'];
+     var howManyVowels = newArray.reduce(function(sum, current) {
+         if (arrVowels.indexOf(current) > -1) {
+             return sum + 1;
+         }
+         else {
+             return sum;
+         }
+     }, 0);
+     return howManyVowels;
+ }
