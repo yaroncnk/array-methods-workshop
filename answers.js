@@ -81,21 +81,59 @@ function longestWord(sentence) {
  }
  
  //ex. 6 finding the highest and the lowest numbers
+ var nums = [1,2,6,77,-20,20,30];
+ function highLow(nums) {
+     var findMax = nums.reduce(function(obj, num){
+       if (num > obj.highest){
+             obj.highest = num;
+         }
+       if (obj.lowest > num)  {
+             obj.lowest = num;
+         }
+         
+       return obj;
+     
+     }, {
+         highest : -Infinity,
+         lowest: Infinity
+     }); 
+     return maxMin;
+ }
+ 
+ //ex. 7 finding the highest and the lowest numbers including second highest and lowest
  
  var nums = [1,2,6,77,-20,20,30];
  function highLow(nums) {
      var maxMin = {
          highest : -Infinity,
-         lowest: Infinity
+         secondHighest: highest ,
+         lowest: Infinity,
+         secondLowest: lowest,
      };
      var findMax = nums.reduce(function(obj, num){
        if (obj.highest < num){
              maxMin.highest = num;
-             return {highest: num, lowest: Infinity};
+             return {highest: num, lowest: Infinity, secondHighest: num, secondLowest: lowest};
          }
          else if (obj.lowest > num)  {
              maxMin.lowest = num;
-             return {lowest: num};
+             return {lowest: num, secondLowest: lowest};
+         }
+       else {
+         return maxMin;
+       }
+     
+     }, maxMin); 
+     return maxMin;
+ }
+      var findMaxtwo = nums.reduce(function(obj, num){
+       if (obj.secondHighest < num){
+             maxMin.secondHighest = num;
+             return {secondHighest: num, lowest: Infinity};
+         }
+         else if (obj.secondLowest > num)  {
+             maxMin.secondLowest = num;
+             return {secondLowest: num};
          }
        else {
          return maxMin;
