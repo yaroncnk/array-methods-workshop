@@ -45,3 +45,21 @@ function filterAway(arrOfArguments, callback) {
     return arrOfArguments.filter(callback);
   
 }
+
+console.log(filterAway(arrOfArguments, checkTrue));
+
+//ex. 4 - finding the longest word in an array
+
+function longestWord(sentence) {
+    var newArray = sentence.split(" ");
+    var hereItIs = newArray.reduce(function(prev,next) {
+        if (next.length > prev.length) {
+            return next;
+        }
+
+        else {
+            return prev;
+        }
+    }, '');
+    return hereItIs;
+}
