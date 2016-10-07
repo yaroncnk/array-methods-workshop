@@ -134,3 +134,29 @@ function highLow(nums) {
      return maxMin;
 }
  
+//ex. 8 counting letters
+
+/* algorithm:
+1. Take a string (input)
+2. Convert into an array that splits that letters
+3. The function takes an empty object, and an array
+4. If charcater X in the object = character(x) in the array - count 1 */
+
+ var str = 'Shalom world';
+ 
+function countLetters(str) {
+    var newArr = str.split("")
+     var countIt = newArr.reduce(function(obj, char){
+       if (obj[char]){
+             obj[char] = obj[char] + 1; 
+       } else {
+         obj[char] = 1;  
+       } 
+       
+       return obj;
+    
+     }, {}); 
+     return countIt;
+}
+
+
