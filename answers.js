@@ -93,53 +93,44 @@ function longestWord(sentence) {
          
        return obj;
      
-     }, {
+     } 
+     var maxMin = {
          highest : -Infinity,
          lowest: Infinity
-     }); 
+     }
+     }, maxMin); 
      return maxMin;
  }
  
  //ex. 7 finding the highest and the lowest numbers including second highest and lowest
- 
- var nums = [1,2,6,77,-20,20,30];
- function highLow(nums) {
-     var maxMin = {
+ var maxMin = {
          highest : -Infinity,
-         secondHighest: highest ,
+         secondHighest: -Infinity,
          lowest: Infinity,
-         secondLowest: lowest,
+         secondLowest: Infinity
      };
+ var nums = [1,2,6,77,-20,20,-12,30];
+ 
+function highLow(nums) {
      var findMax = nums.reduce(function(obj, num){
-       if (obj.highest < num){
-             maxMin.highest = num;
-             return {highest: num, lowest: Infinity, secondHighest: num, secondLowest: lowest};
+       if (num > obj.highest){
+             obj.highest = num; 
          }
-         else if (obj.lowest > num)  {
-             maxMin.lowest = num;
-             return {lowest: num, secondLowest: lowest};
-         }
-       else {
-         return maxMin;
+       
+       if (num > obj.secondHighest && num < obj.highest) {
+         obj.secondHighest = num;
        }
-     
+      
+       if (num < obj.lowest){
+             obj.lowest = num;
+         }
+       if (num < obj.secondLowest && num > obj.lowest) {
+         obj.secondLowest = num;
+       }
+         
+       return obj;
+    
      }, maxMin); 
      return maxMin;
- }
-      var findMaxtwo = nums.reduce(function(obj, num){
-       if (obj.secondHighest < num){
-             maxMin.secondHighest = num;
-             return {secondHighest: num, lowest: Infinity};
-         }
-         else if (obj.secondLowest > num)  {
-             maxMin.secondLowest = num;
-             return {secondLowest: num};
-         }
-       else {
-         return maxMin;
-       }
-     
-     }, maxMin); 
-     return maxMin;
- }
+}
  
