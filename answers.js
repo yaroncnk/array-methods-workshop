@@ -159,4 +159,39 @@ function countLetters(str) {
      return countIt;
 }
 
+//ex. 9 - peopleByID
+
+var people = [
+  {
+    "id": "KeXoYg92is",
+    "firstName": "John",
+    "lastName": "Smith",
+    "email": "john@smith.com"
+  },
+  {
+    "id": "NkALmSWtUp",
+    "firstName": "Donald",
+    "lastName": "Duck",
+    "email": "don@disney.com"
+  },
+  {
+    "id": "m7LPbJYSUg",
+    "firstName": "John",
+    "lastName": "Vader",
+    "email": "vader@darkside.com"
+  }
+]
+
+function peopleById(people) {
+     var buildObject = people.reduce(function(obj, person){
+       if (!obj[person.id]){
+             obj[person.id] = person;
+             delete person.id;
+       } 
+       return obj;
+    
+     }, {}); 
+     return buildObject;
+}
+
 
