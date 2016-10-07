@@ -194,4 +194,78 @@ function peopleById(people) {
      return buildObject;
 }
 
+//ex. 10  - grouping people by first name
+
+var people = [
+  {
+    "id": "KeXoYg92is",
+    "firstName": "John",
+    "lastName": "Smith",
+    "email": "john@smith.com"
+  },
+  {
+    "id": "NkALmSWtUp",
+    "firstName": "Donald",
+    "lastName": "Duck",
+    "email": "don@disney.com"
+  },
+  {
+    "id": "m7LPbJYSUg",
+    "firstName": "John",
+    "lastName": "Vader",
+    "email": "vader@darkside.com"
+  }
+]
+
+function peopleByName(people) {
+     var newArr = [];
+     var buildObject = people.reduce(function(obj, person){
+       if (!obj[person.name]){
+             obj[person.name] = newArr.push(person);
+       } 
+       return obj;
+    
+     }, {}); 
+     return buildObject;
+}
+
+//ex. 10 - an array of people
+var people = [
+  {
+    "id": "KeXoYg92is",
+    "firstName": "John",
+    "lastName": "Smith",
+    "email": "john@smith.com"
+  },
+  {
+    "id": "NkALmSWtUp",
+    "firstName": "Donald",
+    "lastName": "Duck",
+    "email": "don@disney.com"
+  },
+  {
+    "id": "m7LPbJYSUg",
+    "firstName": "John",
+    "lastName": "Vader",
+    "email": "vader@darkside.com"
+  }
+]
+
+function peopleByName(people) {
+     var buildObject = people.reduce(function(obj, person){
+       var newArr = [];
+       if (!obj[person.firstName]){
+             
+             newArr.push(person);
+             obj[person.firstName] = newArr;
+         
+       }else {
+        obj[person.firstName].push(person);
+       }
+
+       return obj;
+    
+     }, {}); 
+     return buildObject;
+}
 
